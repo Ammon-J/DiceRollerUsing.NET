@@ -36,11 +36,15 @@ namespace DiceRollerWithEncapsulation
         /// <summary>
         /// Roll a new rindom value between 1 - 6
         /// and return the newly rolled value
+        /// IF the die was held the current value will be returned
+        ///  and no new value generated
         /// </summary>
         public byte Roll()
         {
-            
-            Value = (byte)rand.Next(1, 7);
+            if(!IsHeld) // If die is not held
+            {
+                Value = (byte)rand.Next(1, 7);
+            }
             return Value;
         }
     }
