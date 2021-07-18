@@ -11,6 +11,21 @@ namespace DiceRollerWithEncapsulation
     /// </summary>
     class Die
     {
+        // static fields are shared across all instances of a class
+        static Random rand;
+
+        static Die() // static consrtuctors are called once for all the instances
+        {
+            rand = new Random();
+        }
+
+        public Die()
+        {
+
+            // Roll die on creation to generate a random number 
+            // to avoid getting zero
+            Roll();
+        }
         /// <summary>
         /// Face value of die
         /// </summary>
@@ -24,7 +39,7 @@ namespace DiceRollerWithEncapsulation
         /// </summary>
         public byte Roll()
         {
-            Random rand = new Random();
+            
             Value = (byte)rand.Next(1, 7);
             return Value;
         }
