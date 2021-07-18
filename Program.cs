@@ -6,7 +6,13 @@ namespace DiceRollerWithEncapsulation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Die die1 = new Die();
+            die1.Roll();
+            Console.WriteLine(die1.Value);
+            die1.Roll();
+            Console.WriteLine(die1.Value);
+            die1.Roll();
+            Console.WriteLine(die1.Value);
         }
     }
 }
